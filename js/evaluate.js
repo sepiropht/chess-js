@@ -1,11 +1,13 @@
+import { COLOURS, PieceVal, PIECES} from './defs.js'
+
 var RookOpenFile = 10;
 var RookSemiOpenFile = 5;
 var QueenOpenFile = 5;
 var QueenSemiOpenFile = 3;
 var BishopPair = 30;
 
-var PawnRanksWhite = new Array(10);
-var PawnRanksBlack = new Array(10);
+export const PawnRanksWhite = new Array(10);
+export const PawnRanksBlack = new Array(10);
 
 var PawnIsolated = -10;
 var PawnPassed = [ 0, 5, 10, 20, 35, 60, 100, 200 ]; 
@@ -124,7 +126,7 @@ function PawnsInit() {
 	}	
 }
 
-function EvalPosition() {
+export function EvalPosition() {
 
 	var pce;
 	var pceNum;

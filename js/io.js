@@ -1,4 +1,4 @@
-function SqFromAlg(moveAlg) {
+export function SqFromAlg(moveAlg) {
 
 	//console.log('SqFromAlg' + moveAlg);
 	if(moveAlg.length != 2) return SQUARES.NO_SQ;
@@ -12,7 +12,7 @@ function SqFromAlg(moveAlg) {
 	return FR2SQ(file,rank);		
 }
 
-function PrintMoveList() {
+export function PrintMoveList() {
 	var index;
 	var move;
 	console.log("MoveList:");
@@ -25,7 +25,7 @@ function PrintMoveList() {
 	}
 }
 
-function PrSq(sq) {
+export function PrSq(sq) {
 	var file = FilesBrd[sq];
 	var rank = RanksBrd[sq];
 	
@@ -33,7 +33,7 @@ function PrSq(sq) {
 	return sqStr;
 }
 
-function PrMove(move) {
+export function PrMove(move) {
 
 	var MvStr;
 	
@@ -61,7 +61,7 @@ function PrMove(move) {
 	return MvStr;
 }
 
-function ParseMove(from, to) {
+export function ParseMove(from, to) {
 	
     GenerateMoves();     
    

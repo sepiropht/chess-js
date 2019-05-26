@@ -1,4 +1,4 @@
-function ThreeFoldRep() {
+export function ThreeFoldRep() {
 	var i = 0, r = 0;
 	for (i = 0; i < brd_hisPly; ++i)	{
 	    if (brd_history[i].posKey == brd_posKey) {
@@ -8,7 +8,7 @@ function ThreeFoldRep() {
 	return r;
 }
 
-function DrawMaterial() {
+export function DrawMaterial() {
 
     if (brd_pceNum[PIECES.wP]!=0 || brd_pceNum[PIECES.bP]!=0) return BOOL.FALSE;
     if (brd_pceNum[PIECES.wQ]!=0 || brd_pceNum[PIECES.bQ]!=0 || brd_pceNum[PIECES.wR]!=0 || brd_pceNum[PIECES.bR]!=0) return BOOL.FALSE;

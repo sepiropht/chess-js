@@ -1,33 +1,34 @@
 // board variables
+import { COLOURS, BRD_SQ_NUM, SQUARES, MAXDEPTH, MAXPOSITIONMOVES, RANKS, FILES, SQ120} from './defs.js'
 
-var brd_side = COLOURS.WHITE;
-var brd_pieces = new Array(BRD_SQ_NUM);
-var brd_enPas = SQUARES.NO_SQ;
-var brd_fiftyMove;	
-var brd_ply;
-var brd_hisPly;	
-var brd_castlePerm;	
-var brd_posKey;	
-var brd_pceNum = new Array(13);
-var brd_material = new Array(2);	
-var brd_pList = new Array(14 * 10);	
+export const brd_side = COLOURS.WHITE;
+export const brd_pieces = new Array(BRD_SQ_NUM);
+export const brd_enPas = SQUARES.NO_SQ;
+export let brd_fiftyMove;	
+export let brd_ply;
+let brd_hisPly;	
+let brd_castlePerm;	
+let brd_posKey;	
+export const brd_pceNum = new Array(13);
+export const brd_material = new Array(2);	
+export const brd_pList = new Array(14 * 10);	
 
-var brd_history = [];
+export const brd_history = [];
 
-var brd_bookLines = [];
+export const brd_bookLines = [];
 
-var brd_moveList = new Array(MAXDEPTH * MAXPOSITIONMOVES);
-var brd_moveScores = new Array(MAXDEPTH * MAXPOSITIONMOVES);
-var brd_moveListStart = new Array(MAXDEPTH);
+export const brd_moveList = new Array(MAXDEPTH * MAXPOSITIONMOVES);
+export const brd_moveScores = new Array(MAXDEPTH * MAXPOSITIONMOVES);
+export const brd_moveListStart = new Array(MAXDEPTH);
 
-var brd_PvTable = [];	
-var brd_PvArray = new Array(MAXDEPTH);
-var brd_searchHistory = new Array(14 * BRD_SQ_NUM);
-var brd_searchKillers = new Array(3 * MAXDEPTH);
+export const brd_PvTable = [];	
+export const brd_PvArray = new Array(MAXDEPTH);
+export const brd_searchHistory = new Array(14 * BRD_SQ_NUM);
+export const brd_searchKillers = new Array(3 * MAXDEPTH);
 
 // board functions
 
-function BoardToFen() {
+export function BoardToFen() {
 	var fenStr = '';
 	var rank,file,sq,piece;
 	var emptyCount = 0;
@@ -85,7 +86,7 @@ function BoardToFen() {
 	return fenStr;
 }
 
-function CheckBoard() {   
+export function CheckBoard() {   
  
 	var t_pceNum = [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 	var t_material = [ 0, 0];
@@ -135,7 +136,7 @@ function CheckBoard() {
 	return BOOL.TRUE;	
 }
 
-function printGameLine() {
+export function printGameLine() {
 
 	var moveNum = 0;
 	var gameLine = "";
@@ -158,7 +159,7 @@ function LineMatch(BookLine,gameline) {
 	return BOOL.TRUE;
 }
 
-function BookMove() {
+export function BookMove() {
 
 	var gameLine = printGameLine();
 	var bookMoves = [];
@@ -222,7 +223,7 @@ function UpdateListsMaterial() {
 	}
 }
 
-function GeneratePosKey() {
+export function GeneratePosKey() {
 
 	var sq = 0;
 	var finalKey = 0;
@@ -249,7 +250,7 @@ function GeneratePosKey() {
 	return finalKey;
 }
 
-function PrintBoard() {
+export function PrintBoard() {
 	
 	var sq,file,rank,piece;
 
@@ -319,7 +320,7 @@ function ResetBoard() {
 	
 }
 
-function ParseFen(fen) {
+export function ParseFen(fen) {
 	
 	var rank = RANKS.RANK_8;
     var file = FILES.FILE_A;
@@ -412,7 +413,7 @@ function ParseFen(fen) {
     UpdateListsMaterial();
 }
 
-function SqAttacked(sq, side) {
+export function SqAttacked(sq, side) {
 	var pce;
 	var t_sq;
 	var index;

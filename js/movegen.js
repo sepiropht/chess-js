@@ -1,7 +1,8 @@
+import { PIECES } from './defs.js'
 var VictimScore = [ 0, 100, 200, 300, 400, 500, 600, 100, 200, 300, 400, 500, 600 ];
 var MvvLvaScores = new Array(14 * 14);
 
-function InitMvvLva() {
+export function InitMvvLva() {
 	var Attacker;
 	var Victim;
 	for(Attacker = PIECES.wP; Attacker <= PIECES.bK; ++Attacker) {
@@ -16,7 +17,7 @@ function MOVE(from,to,captured,promoted,flag) {
 	return (from | (to << 7) | (captured << 14) | (promoted << 20) | flag);
 }
 
-function MoveExists(move) {
+export function MoveExists(move) {
 	
 	GenerateMoves();
     
@@ -264,7 +265,7 @@ function GenerateMoves() {
 }
 
 
-function GenerateCaptures() {
+export function GenerateCaptures() {
 	brd_moveListStart[brd_ply + 1] = brd_moveListStart[brd_ply];
 	var pceType;
 	var pceNum;

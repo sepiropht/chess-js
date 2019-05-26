@@ -1,3 +1,10 @@
+import { ThreeFoldRep, DrawMaterial } from './protocol.js';
+import { FILES, RANKS, RanksBrd, FilesBrd , FR2SQ, GameController, SQUARES, BOOL, START_FEN } from './defs.js';
+import { ParseFen, PrintBoard,  brd_fiftyMove, brd_moveListStart, brd_moveList, BoardToFen } from './board.js';
+import { EvalPosition } from './evaluate.js';
+import { MakeMove } from './makemove.js'
+import { srch_best, srch_thinking, srch_depth, srch_time } from './search.js'
+
 var UserMove = {};
 UserMove.from = SQUARES.NO_SQ;
 UserMove.to = SQUARES.NO_SQ;
@@ -328,7 +335,7 @@ $("#FlipButton").click(function () {
 	SetInitialBoardPieces();
 });
 
-function NewGame() {
+export function NewGame() {
 	ParseFen(START_FEN);
 	PrintBoard();		
 	SetInitialBoardPieces();
@@ -342,7 +349,7 @@ $("#NewGameButton").click(function () {
 	newGameAjax();
 });
 
-function newGameAjax() {
+export function newGameAjax() {
 	console.log('new Game Ajax');
 	/*$.ajax({
 		url : "insertNewGame.php",
@@ -352,7 +359,7 @@ function newGameAjax() {
 		});*/
 }
 
-function initBoardSquares() {
+export function initBoardSquares() {
 
 	
 	var light = 0;
@@ -361,7 +368,9 @@ function initBoardSquares() {
 	var divString;
 	var lightString;
 	var lastLight=0;
-	
+	var rankIter;
+	var fileIter;
+
 	for(rankIter = RANKS.RANK_8; rankIter >= RANKS.RANK_1; rankIter--) {	
 		light = lastLight ^ 1;
 		lastLight ^= 1;

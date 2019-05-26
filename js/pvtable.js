@@ -1,4 +1,4 @@
-function GetPvLine(depth) {;
+export function GetPvLine(depth) {;
 
 	//console.log("GetPvLine");
 	
@@ -24,7 +24,7 @@ function GetPvLine(depth) {;
 	
 }
 
-function StorePvMove(move) {
+export function StorePvMove(move) {
 
 	var index = brd_posKey % PVENTRIES;	
 	
@@ -32,7 +32,7 @@ function StorePvMove(move) {
     brd_PvTable[index].posKey = brd_posKey;
 }
 
-function ProbePvTable() {
+export function ProbePvTable() {
 
 	var index = brd_posKey % PVENTRIES;	
 	

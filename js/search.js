@@ -1,12 +1,13 @@
-var srch_nodes;
-var srch_fh;
-var srch_fhf;
-var srch_depth;
-var srch_time;
-var srch_start;
-var srch_stop;
-var srch_best;
-var srch_thinking;
+let srch_nodes;
+let srch_fh;
+let srch_fhf;
+import { GenerateCaptures } from './movegen.js'; 
+export let srch_depth;
+export let srch_time;
+export let srch_start;
+export let srch_stop;
+export let srch_best;
+export let  srch_thinking;
 
 function CheckUp() {
 	if( ($.now()-srch_start) > srch_time ) srch_stop = BOOL.TRUE;
@@ -292,7 +293,7 @@ function UpdateDOMStats() {
 		$("#TimeOut").text("Time: " + (($.now()-srch_start)/1000).toFixed(1) + "s");
 }
 
-function SearchPosition() {
+export function SearchPosition() {
 	
 	var bestMove = NOMOVE;
 	var bestScore = -INFINITE;

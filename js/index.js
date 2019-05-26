@@ -1,7 +1,12 @@
-$(document).ajaxComplete(function() {
-  	
-  	
-});
+import { NewGame, newGameAjax, initBoardSquares } from './gui.js';
+import { FILES, RANKS, SQUARES, BRD_SQ_NUM, FilesBrd, RanksBrd, FR2SQ, Sq120ToSq64, Sq64ToSq120, PieceKeys, RAND_32, CastleKeys, MAXGAMEMOVES
+	, NOMOVE, PVENTRIES, BOOL, START_FEN
+} from './defs.js'; 
+import { brd_history, brd_PvTable } from './board.js';
+import { InitMvvLva } from './movegen.js'
+import { PawnRanksWhite, PawnRanksBlack } from './evaluate.js';
+import { srch_thinking } from './search.js';
+let SideKey
 
 $(function() {
 	init();
@@ -133,5 +138,5 @@ function init() {
 	InitMvvLva();
 	initBoardSquares();
 	EvalInit();
-	srch_thinking = BOOL.FALSE;
+//	srch_thinking = BOOL.FALSE;
 }

@@ -55,7 +55,7 @@ function MovePiece(from, to) {
 	
 }
 
-function MakeMove(move) {
+export function MakeMove(move) {
 	
 	var from = FROMSQ(move);
     var to = TOSQ(move);
@@ -145,7 +145,7 @@ function MakeMove(move) {
 }
 
 
-function TakeMove() {		
+export function TakeMove() {		
 	
 	brd_hisPly--;
     brd_ply--;
