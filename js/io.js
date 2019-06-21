@@ -1,3 +1,5 @@
+import {GenerateMoves} from './movegen.js';
+
 export function SqFromAlg(moveAlg) {
 
 	//console.log('SqFromAlg' + moveAlg);

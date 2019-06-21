@@ -1,3 +1,6 @@
+import { PieceVal, PIECES, PieceKeys, SideKey, CastleKeys, PieceCol, PCEINDEX, FR2SQ, PceChar, SideChar
+	, START_FEN, GameController, BOOL, FilesBrd, RanksBrd} from './defs.js'
+import { ParseFen, PrintBoard,  brd_fiftyMove, brd_moveListStart, brd_moveList, BoardToFen, brd_pieces, brd_side, brd_hisPly, brd_pceNum } from './board.js';
 export function ThreeFoldRep() {
 	var i = 0, r = 0;
 	for (i = 0; i < brd_hisPly; ++i)	{

@@ -1,12 +1,13 @@
 // board variables
-import { COLOURS, BRD_SQ_NUM, SQUARES, MAXDEPTH, MAXPOSITIONMOVES, RANKS, FILES, SQ120} from './defs.js'
-
-export const brd_side = COLOURS.WHITE;
-export const brd_pieces = new Array(BRD_SQ_NUM);
-export const brd_enPas = SQUARES.NO_SQ;
+import { COLOURS, BRD_SQ_NUM, SQUARES, MAXDEPTH, MAXPOSITIONMOVES, RANKS, FILES, SQ120, CASTLEBIT} from './defs.js'
+import { PieceVal, PIECES, PieceKeys, SideKey, CastleKeys, PieceCol, PCEINDEX, FR2SQ, PceChar, SideChar
+} from './defs.js'
+export let brd_side = COLOURS.WHITE;
+export let brd_pieces = new Array(BRD_SQ_NUM);
+export let brd_enPas = SQUARES.NO_SQ;
 export let brd_fiftyMove;	
 export let brd_ply;
-let brd_hisPly;	
+export let brd_hisPly;	
 let brd_castlePerm;	
 let brd_posKey;	
 export const brd_pceNum = new Array(13);

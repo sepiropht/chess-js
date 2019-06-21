@@ -1,3 +1,4 @@
+import {GenerateMoves} from './movegen.js';
 var perft_leafNodes;
 
 function Perft(depth) { 

@@ -1,7 +1,8 @@
 let srch_nodes;
 let srch_fh;
 let srch_fhf;
-import { GenerateCaptures } from './movegen.js'; 
+import { GenerateCaptures } from './movegen.js';
+import {GenerateMoves} from './movegen.js'; 
 export let srch_depth;
 export let srch_time;
 export let srch_start;

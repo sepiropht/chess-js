@@ -1,4 +1,12 @@
-import { PIECES } from './defs.js'
+import { ThreeFoldRep, DrawMaterial } from './protocol.js';
+import { COLOURS, BRD_SQ_NUM, SQUARES, MAXDEPTH, MAXPOSITIONMOVES, RANKS, FILES, SQ120, CASTLEBIT} from './defs.js'
+import { PieceVal, PIECES, PieceKeys, SideKey, CastleKeys, PieceCol, PCEINDEX, FR2SQ, PceChar, SideChar
+	, START_FEN, GameController, BOOL, FilesBrd, RanksBrd} from './defs.js'
+import { ParseFen, PrintBoard,  brd_fiftyMove, brd_moveListStart, brd_moveList, BoardToFen, brd_pieces, brd_side, brd_hisPly } from './board.js';
+import { EvalPosition } from './evaluate.js';
+import { MakeMove } from './makemove.js'
+import { srch_best, srch_thinking, srch_depth, srch_time } from './search.js'
+
 var VictimScore = [ 0, 100, 200, 300, 400, 500, 600, 100, 200, 300, 400, 500, 600 ];
 var MvvLvaScores = new Array(14 * 14);
 
@@ -105,7 +113,7 @@ function AddBlackPawnQuietMove(from, to) {
 }
 
 
-function GenerateMoves() {
+export function GenerateMoves() {
 	brd_moveListStart[brd_ply + 1] = brd_moveListStart[brd_ply];
 	var pceType;
 	var pceNum;

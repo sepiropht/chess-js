@@ -1,10 +1,12 @@
 import { ThreeFoldRep, DrawMaterial } from './protocol.js';
-import { FILES, RANKS, RanksBrd, FilesBrd , FR2SQ, GameController, SQUARES, BOOL, START_FEN } from './defs.js';
-import { ParseFen, PrintBoard,  brd_fiftyMove, brd_moveListStart, brd_moveList, BoardToFen } from './board.js';
+import { COLOURS, BRD_SQ_NUM, SQUARES, MAXDEPTH, MAXPOSITIONMOVES, RANKS, FILES, SQ120, CASTLEBIT} from './defs.js'
+import { PieceVal, PIECES, PieceKeys, SideKey, CastleKeys, PieceCol, PCEINDEX, FR2SQ, PceChar, SideChar
+	, START_FEN, GameController, BOOL, FilesBrd, RanksBrd} from './defs.js'
+import { ParseFen, PrintBoard,  brd_fiftyMove, brd_moveListStart, brd_moveList, BoardToFen, brd_pieces, brd_side, brd_hisPly } from './board.js';
 import { EvalPosition } from './evaluate.js';
 import { MakeMove } from './makemove.js'
 import { srch_best, srch_thinking, srch_depth, srch_time } from './search.js'
-
+import {GenerateMoves} from './movegen.js';
 var UserMove = {};
 UserMove.from = SQUARES.NO_SQ;
 UserMove.to = SQUARES.NO_SQ;
